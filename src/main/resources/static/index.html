@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartReceipt | AI Expense Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <div class="logo">SmartReceipt <span>AI</span></div>
+            <p class="tagline">Contextual Receipt Verification Engine</p>
+        </header>
+
+        <main class="main-content">
+            <section class="upload-section">
+                <div class="card">
+                    <h3>1. Upload Receipt</h3>
+                    <div class="upload-box" id="dropZone">
+                        <input type="file" id="fileInput" accept="image/*">
+                        <label for="fileInput" class="upload-label">
+                            <span class="icon">📁</span>
+                            <p>Click to browse or drag receipt here</p>
+                        </label>
+                    </div>
+                    <div id="imagePreviewContainer" class="hidden">
+                        <img id="imagePreview" src="" alt="Receipt Preview">
+                    </div>
+                    <button id="analyzeBtn" class="primary-btn">Analyze with AI Intelligence</button>
+                </div>
+            </section>
+
+            <section class="results-section">
+                <div class="card result-card" id="resultCard">
+                    <h3>2. Analysis Results</h3>
+                    
+                    <div id="loader" class="hidden">
+                        <div class="spinner"></div>
+                        <p>Auditing Document Context...</p>
+                    </div>
+
+                    <div id="resultsContent" class="hidden">
+                        <div class="stat-group">
+                            <label>Estimated Total</label>
+                            <div class="total-badge" id="totalValue">$0.00</div>
+                        </div>
+
+                        <div class="stat-group">
+                            <label>Audit Status</label>
+                            <div class="status-badge success">Verified Context</div>
+                        </div>
+
+                        <div class="raw-data-box">
+                            <label>Extracted Context:</label>
+                            <div id="rawText" class="text-log"></div>
+                        </div>
+                    </div>
+
+                    <div id="placeholder" class="placeholder-text">
+                        <p>Upload a document to begin the smart audit process.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
